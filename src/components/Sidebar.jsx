@@ -11,10 +11,10 @@ const menuItems = [
 ];
 
 export default function Sidebar({ activeTab, setActiveTab, isOpen, onClose }) {
-    // Common sidebar content
+    
     const SidebarContent = () => (
         <div className="h-full flex flex-col p-6">
-            {/* Logo Area */}
+            {}
             <div className="flex items-center justify-between mb-10">
                 <div className="flex items-center gap-3 px-2">
                     <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
@@ -22,20 +22,20 @@ export default function Sidebar({ activeTab, setActiveTab, isOpen, onClose }) {
                     </div>
                     <span className="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">Valora</span>
                 </div>
-                {/* Close Button (Mobile Only) */}
+                {}
                 <button onClick={onClose} className="lg:hidden p-2 text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
                     <X size={20} />
                 </button>
             </div>
 
-            {/* Navigation */}
+            {}
             <nav className="space-y-2 flex-1">
                 {menuItems.map((item) => (
                     <motion.button
                         key={item.id}
                         onClick={() => {
                             setActiveTab(item.id);
-                            onClose(); // Close sidebar on mobile when item clicked
+                            onClose(); 
                         }}
                         whileHover={{ scale: 1.02, x: 4 }}
                         whileTap={{ scale: 0.95 }}
@@ -68,12 +68,12 @@ export default function Sidebar({ activeTab, setActiveTab, isOpen, onClose }) {
 
     return (
         <>
-            {/* Desktop Sidebar: Visible only on lg screens */}
+            {}
             <div className="hidden lg:block fixed left-0 top-0 h-screen w-64 bg-white dark:bg-zinc-950 border-r border-zinc-200 dark:border-zinc-800 z-50">
                 <SidebarContent />
             </div>
 
-            {/* Mobile Drawer Overlay */}
+            {}
             <AnimatePresence>
                 {isOpen && (
                     <>

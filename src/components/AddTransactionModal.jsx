@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-// Accept currencySymbol prop
 export default function AddTransactionModal({ isOpen, onClose, onAdd, currencySymbol }) {
     const [formData, setFormData] = useState({
         title: '',
@@ -53,8 +52,8 @@ export default function AddTransactionModal({ isOpen, onClose, onAdd, currencySy
                                         type="button"
                                         onClick={() => setFormData({ ...formData, type })}
                                         className={`flex-1 py-2 text-sm font-medium rounded-md capitalize transition-all ${formData.type === type
-                                                ? 'bg-white dark:bg-zinc-700 shadow-sm text-zinc-900 dark:text-white'
-                                                : 'text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300'
+                                            ? 'bg-white dark:bg-zinc-700 shadow-sm text-zinc-900 dark:text-white'
+                                            : 'text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300'
                                             }`}
                                     >
                                         {type}
@@ -76,7 +75,6 @@ export default function AddTransactionModal({ isOpen, onClose, onAdd, currencySy
 
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    {/* Dynamic Currency Label */}
                                     <label className="block text-xs font-medium text-zinc-500 mb-1">Amount ({currencySymbol})</label>
                                     <input
                                         type="number"

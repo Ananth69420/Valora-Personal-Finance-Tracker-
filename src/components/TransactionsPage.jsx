@@ -12,9 +12,9 @@ import {
 
 export default function TransactionsPage({ transactions, currency }) {
     const [searchTerm, setSearchTerm] = useState('');
-    const [filterType, setFilterType] = useState('all'); // all, income, expense
+    const [filterType, setFilterType] = useState('all'); 
 
-    // Filter Logic
+    
     const filteredData = transactions.filter(t => {
         const matchesSearch = t.title.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesType = filterType === 'all' || t.type === filterType;
@@ -28,10 +28,10 @@ export default function TransactionsPage({ transactions, currency }) {
             className="space-y-6"
         >
 
-            {/* 1. Toolbar Section */}
+            {}
             <div className="flex flex-col sm:flex-row gap-4 justify-between items-center bg-white/50 dark:bg-zinc-900/50 backdrop-blur-xl p-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm sticky top-0 z-30">
 
-                {/* Search Input */}
+                {}
                 <div className="relative w-full sm:w-96 group">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-blue-500 transition-colors" size={18} />
                     <input
@@ -43,9 +43,9 @@ export default function TransactionsPage({ transactions, currency }) {
                     />
                 </div>
 
-                {/* Action Buttons */}
+                {}
                 <div className="flex gap-3 w-full sm:w-auto overflow-x-auto pb-2 sm:pb-0">
-                    {/* Filter Pills */}
+                    {}
                     <div className="flex bg-zinc-100 dark:bg-zinc-800 p-1 rounded-xl">
                         {['all', 'income', 'expense'].map(type => (
                             <button
@@ -68,7 +68,7 @@ export default function TransactionsPage({ transactions, currency }) {
                         ))}
                     </div>
 
-                    {/* Export Button */}
+                    {}
                     <button className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors text-zinc-600 dark:text-zinc-300 text-sm font-medium whitespace-nowrap">
                         <Download size={16} />
                         <span className="hidden sm:inline">Export CSV</span>
@@ -76,7 +76,7 @@ export default function TransactionsPage({ transactions, currency }) {
                 </div>
             </div>
 
-            {/* 2. Glassmorphic Table */}
+            {}
             <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-lg shadow-zinc-200/20 dark:shadow-black/40">
                 <div className="overflow-x-auto">
                     <table className="w-full text-left text-sm">
@@ -97,7 +97,7 @@ export default function TransactionsPage({ transactions, currency }) {
                                 {filteredData.map((t) => (
                                     <motion.tr
                                         key={t.id}
-                                        layout // Smooth shuffle animation
+                                        layout 
                                         initial={{ opacity: 0, scale: 0.98 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0.98 }}
@@ -105,7 +105,7 @@ export default function TransactionsPage({ transactions, currency }) {
                                         className="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors group"
                                     >
 
-                                        {/* Title & Icon */}
+                                        {}
                                         <td className="p-5">
                                             <div className="flex items-center gap-4">
                                                 <div className={`w-10 h-10 rounded-full flex items-center justify-center shadow-sm ${t.type === 'income'
@@ -121,25 +121,25 @@ export default function TransactionsPage({ transactions, currency }) {
                                             </div>
                                         </td>
 
-                                        {/* Category */}
+                                        {}
                                         <td className="p-5">
                                             <span className="px-3 py-1 rounded-full text-xs font-medium bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700">
                                                 {t.category}
                                             </span>
                                         </td>
 
-                                        {/* Date */}
+                                        {}
                                         <td className="p-5 text-zinc-500 dark:text-zinc-400 font-mono text-xs">
                                             {t.date}
                                         </td>
 
-                                        {/* Amount - Uses Dynamic Currency */}
+                                        {}
                                         <td className={`p-5 text-right font-bold font-mono ${t.type === 'income' ? 'text-emerald-600 dark:text-emerald-400' : 'text-zinc-900 dark:text-white'
                                             }`}>
                                             {t.type === 'income' ? '+' : ''}{currency}{t.amount.toFixed(2)}
                                         </td>
 
-                                        {/* Status Pill */}
+                                        {}
                                         <td className="p-5 text-right">
                                             <div className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${t.status === 'Completed'
                                                     ? 'bg-green-50 text-green-700 border-green-200 dark:bg-green-500/10 dark:text-green-400 dark:border-green-500/20'
@@ -151,7 +151,7 @@ export default function TransactionsPage({ transactions, currency }) {
                                             </div>
                                         </td>
 
-                                        {/* Action Menu */}
+                                        {}
                                         <td className="p-5 text-center">
                                             <button className="p-2 text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
                                                 <MoreHorizontal size={16} />
@@ -164,7 +164,7 @@ export default function TransactionsPage({ transactions, currency }) {
                         </tbody>
                     </table>
 
-                    {/* Empty State */}
+                    {}
                     {filteredData.length === 0 && (
                         <div className="p-12 flex flex-col items-center justify-center text-zinc-400">
                             <div className="w-16 h-16 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center mb-4">
@@ -176,7 +176,7 @@ export default function TransactionsPage({ transactions, currency }) {
                     )}
                 </div>
 
-                {/* 3. Pagination Footer */}
+                {}
                 <div className="border-t border-zinc-200 dark:border-zinc-800 p-4 bg-zinc-50/50 dark:bg-zinc-900/30 flex justify-between items-center">
                     <span className="text-xs text-zinc-500 dark:text-zinc-400">
                         Showing <span className="font-medium text-zinc-900 dark:text-white">{filteredData.length}</span> results

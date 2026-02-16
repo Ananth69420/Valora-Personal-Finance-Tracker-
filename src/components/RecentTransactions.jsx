@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowDownLeft, ArrowRight, Wallet } from 'lucide-react';
 
 export default function RecentTransactions({ data = [], onViewAll }) {
-    // Only show the latest 5 items
+    
     const recentData = data.slice(0, 5);
 
     return (
         <div className="w-full h-full flex flex-col justify-between">
 
-            {/* Scrollable List Area */}
+            {}
             <div className="flex-1 overflow-y-auto pr-2 space-y-3 custom-scrollbar">
                 {recentData.length === 0 ? (
                     <div className="h-full flex flex-col items-center justify-center text-zinc-400 opacity-50">
@@ -26,7 +26,7 @@ export default function RecentTransactions({ data = [], onViewAll }) {
                             whileHover={{ scale: 1.02 }}
                             className="flex items-center justify-between p-3 rounded-xl bg-white/50 dark:bg-zinc-900/50 hover:bg-white dark:hover:bg-zinc-800 transition-colors cursor-pointer border border-transparent hover:border-zinc-200 dark:hover:border-zinc-700 shadow-sm hover:shadow-md"
                         >
-                            {/* Icon & Title Group */}
+                            {}
                             <div className="flex items-center gap-4">
                                 <div className={`w-10 h-10 rounded-full flex items-center justify-center ${t.type === 'income'
                                         ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-500'
@@ -43,7 +43,7 @@ export default function RecentTransactions({ data = [], onViewAll }) {
                                 </div>
                             </div>
 
-                            {/* Amount Display */}
+                            {}
                             <div className="text-right">
                                 <p className={`font-bold text-sm ${t.type === 'income' ? 'text-emerald-600 dark:text-emerald-400' : 'text-zinc-900 dark:text-zinc-100'
                                     }`}>
@@ -59,7 +59,7 @@ export default function RecentTransactions({ data = [], onViewAll }) {
                 )}
             </div>
 
-            {/* Animated Bottom Action Button */}
+            {}
             <motion.button
                 onClick={onViewAll}
                 whileHover="hover"

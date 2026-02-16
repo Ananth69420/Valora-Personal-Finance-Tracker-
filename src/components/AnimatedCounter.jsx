@@ -16,7 +16,7 @@ export default function AnimatedCounter({ value, prefix = "" }) {
     useEffect(() => {
         springValue.on("change", (latest) => {
             if (ref.current) {
-                // Format with commas and 2 decimals
+                
                 ref.current.textContent = prefix + latest.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
         });

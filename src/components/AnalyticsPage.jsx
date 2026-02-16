@@ -20,7 +20,7 @@ const HISTORY_DATA = [
     { month: 'Apr', income: 27800, expense: 39080 },
 ];
 
-// 1. Accept 'currency' in Tooltip
+
 const CustomTooltip = ({ active, payload, label, currency }) => {
     if (active && payload && payload.length) {
         return (
@@ -37,7 +37,7 @@ const CustomTooltip = ({ active, payload, label, currency }) => {
     return null;
 };
 
-// 2. Accept 'currency' in Main Component
+
 export default function AnalyticsPage({ currency }) {
     return (
         <motion.div
@@ -45,7 +45,7 @@ export default function AnalyticsPage({ currency }) {
             animate={{ opacity: 1, y: 0 }}
             className="space-y-6"
         >
-            {/* ... Insight Banner (Same as before) ... */}
+            {}
             <div className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 rounded-2xl p-6 flex items-start gap-4">
                 <div className="p-3 bg-indigo-500/20 text-indigo-400 rounded-xl"><TrendingUp size={24} /></div>
                 <div>
@@ -57,7 +57,7 @@ export default function AnalyticsPage({ currency }) {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Donut Chart */}
+                {}
                 <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm">
                     <h3 className="font-bold text-zinc-900 dark:text-white mb-6">Expense by Category</h3>
                     <div className="h-64 w-full">
@@ -68,7 +68,7 @@ export default function AnalyticsPage({ currency }) {
                                         <Cell key={`cell-${index}`} fill={entry.color} stroke="none" />
                                     ))}
                                 </Pie>
-                                {/* Pass currency to tooltip */}
+                                {}
                                 <Tooltip content={<CustomTooltip currency={currency} />} />
                                 <Legend verticalAlign="bottom" height={36} iconType="circle" />
                             </PieChart>
@@ -76,7 +76,7 @@ export default function AnalyticsPage({ currency }) {
                     </div>
                 </div>
 
-                {/* Bar Chart */}
+                {}
                 <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm">
                     <h3 className="font-bold text-zinc-900 dark:text-white mb-6">Income vs Expenses</h3>
                     <div className="h-64 w-full">
@@ -88,7 +88,7 @@ export default function AnalyticsPage({ currency }) {
                                     axisLine={false}
                                     tickLine={false}
                                     tick={{ fill: '#71717a', fontSize: 12 }}
-                                    tickFormatter={(val) => `${currency}${val}`} // Use Dynamic Currency
+                                    tickFormatter={(val) => `${currency}${val}`} 
                                 />
                                 <Tooltip content={<CustomTooltip currency={currency} />} cursor={{ fill: 'transparent' }} />
                                 <Legend iconType="circle" />
@@ -100,9 +100,9 @@ export default function AnalyticsPage({ currency }) {
                 </div>
             </div>
 
-            {/* Health Cards */}
+            {}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* ... First two cards same as before ... */}
+                {}
                 <div className="bg-emerald-500/10 border border-emerald-500/20 p-6 rounded-2xl flex flex-col justify-between">
                     <div className="flex justify-between items-start">
                         <div className="p-2 bg-emerald-500/20 text-emerald-500 rounded-lg"><Wallet size={20} /></div>
@@ -125,10 +125,10 @@ export default function AnalyticsPage({ currency }) {
                     </div>
                 </div>
 
-                {/* Total Net Worth Card */}
+                {}
                 <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 rounded-2xl flex flex-col justify-center items-center text-center">
                     <h4 className="text-zinc-500 text-sm mb-2">Total Net Worth</h4>
-                    {/* Dynamic Currency */}
+                    {}
                     <div className="text-3xl font-bold text-zinc-900 dark:text-white">
                         {currency}45,231.89
                     </div>

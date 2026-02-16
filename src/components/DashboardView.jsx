@@ -15,7 +15,7 @@ export default function DashboardView({ transactions, setActiveTab, currency }) 
     return (
         <BentoGrid className="max-w-4xl mx-0">
 
-            {/* 1. Main Balance Card - Spans 2 columns */}
+            {}
             <BentoCard
                 title="Total Balance"
                 description="Available across all accounts"
@@ -24,7 +24,7 @@ export default function DashboardView({ transactions, setActiveTab, currency }) 
                 header={
                     <div className="flex items-center justify-center w-full h-full bg-zinc-50 dark:bg-zinc-900/50">
                         <h1 className="text-4xl font-bold text-zinc-900 dark:text-white">
-                            {/* Pass the dynamic currency symbol here */}
+                            {}
                             <AnimatedCounter value={24562.00} prefix={currency} />
                         </h1>
                         <span className="ml-3 px-2 py-1 bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400 text-xs rounded-full font-medium">
@@ -34,7 +34,7 @@ export default function DashboardView({ transactions, setActiveTab, currency }) 
                 }
             />
 
-            {/* 2. Monthly Budget Card */}
+            {}
             <BentoCard
                 title="Monthly Budget"
                 description="You have spent 65% of your limit."
@@ -52,7 +52,7 @@ export default function DashboardView({ transactions, setActiveTab, currency }) 
                 }
             />
 
-            {/* 3. Income Card */}
+            {}
             <BentoCard
                 title="Income"
                 description="Last 30 days"
@@ -64,7 +64,7 @@ export default function DashboardView({ transactions, setActiveTab, currency }) 
                 </div>
             </BentoCard>
 
-            {/* 4. Expenses Card */}
+            {}
             <BentoCard
                 title="Expenses"
                 description="Last 30 days"
@@ -76,7 +76,7 @@ export default function DashboardView({ transactions, setActiveTab, currency }) 
                 </div>
             </BentoCard>
 
-            {/* 5. Recent Activity */}
+            {}
             <BentoCard
                 title="Recent Activity"
                 description="Latest 5 transactions"
@@ -87,12 +87,12 @@ export default function DashboardView({ transactions, setActiveTab, currency }) 
                     <RecentTransactions
                         data={transactions}
                         onViewAll={() => setActiveTab('transactions')}
-                        currency={currency} // Optional: Pass currency if RecentTransactions uses it
+                        currency={currency} 
                     />
                 </div>
             </BentoCard>
 
-            {/* 6. Cash Flow Chart */}
+            {}
             <BentoCard
                 title="Cash Flow"
                 description="Income vs Expenses over time"

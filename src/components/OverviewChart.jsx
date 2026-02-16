@@ -23,7 +23,7 @@ const data = [
 const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
-            // Tooltip is always dark for contrast, even in light mode
+            
             <div className="bg-zinc-900 border border-zinc-800 p-3 rounded-lg shadow-xl z-50">
                 <p className="text-zinc-400 text-xs mb-1">{label}</p>
                 <p className="text-emerald-400 text-sm font-bold">
@@ -41,9 +41,9 @@ const CustomTooltip = ({ active, payload, label }) => {
 export default function OverviewChart() {
     const { theme } = useTheme();
 
-    // Dynamic colors based on theme
-    const gridColor = theme === 'dark' ? "#27272a" : "#e4e4e7"; // zinc-800 vs zinc-200
-    const axisColor = theme === 'dark' ? "#52525b" : "#71717a"; // zinc-600 vs zinc-500
+    
+    const gridColor = theme === 'dark' ? "#27272a" : "#e4e4e7"; 
+    const axisColor = theme === 'dark' ? "#52525b" : "#71717a"; 
 
     return (
         <div className="h-full w-full min-h-[200px]">

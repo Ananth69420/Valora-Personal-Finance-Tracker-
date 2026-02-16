@@ -13,7 +13,7 @@ const CURRENCIES = [
 export default function SettingsPage({ currency, setCurrency, notifications, setNotifications }) {
     const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
 
-    // Toggle handler
+    
     const toggleNotification = (key) => {
         setNotifications(prev => ({ ...prev, [key]: !prev[key] }));
     };
@@ -25,7 +25,7 @@ export default function SettingsPage({ currency, setCurrency, notifications, set
             className="max-w-4xl mx-auto space-y-8"
         >
 
-            {/* Profile Section (Static for now, but looks good) */}
+            {}
             <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-sm">
                 <div className="relative">
                     <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 p-1">
@@ -53,7 +53,7 @@ export default function SettingsPage({ currency, setCurrency, notifications, set
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                {/* General Preferences */}
+                {}
                 <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm">
                     <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-6 flex items-center gap-2">
                         <Globe size={20} className="text-blue-500" />
@@ -61,7 +61,7 @@ export default function SettingsPage({ currency, setCurrency, notifications, set
                     </h3>
 
                     <div className="space-y-6">
-                        {/* Currency Selector */}
+                        {}
                         <div className="relative">
                             <label className="block text-sm text-zinc-500 dark:text-zinc-400 mb-2">Display Currency</label>
                             <button
@@ -77,7 +77,7 @@ export default function SettingsPage({ currency, setCurrency, notifications, set
                                 <ChevronDown size={16} className={`text-zinc-500 transition-transform ${isCurrencyOpen ? 'rotate-180' : ''}`} />
                             </button>
 
-                            {/* Dropdown Menu */}
+                            {}
                             <AnimatePresence>
                                 {isCurrencyOpen && (
                                     <motion.div
@@ -109,7 +109,7 @@ export default function SettingsPage({ currency, setCurrency, notifications, set
                     </div>
                 </div>
 
-                {/* Notifications */}
+                {}
                 <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm">
                     <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-6 flex items-center gap-2">
                         <Bell size={20} className="text-amber-500" />
@@ -117,7 +117,7 @@ export default function SettingsPage({ currency, setCurrency, notifications, set
                     </h3>
                     <div className="space-y-6">
 
-                        {/* Email Toggle */}
+                        {}
                         <div className="flex items-center justify-between">
                             <div className="flex flex-col">
                                 <span className="text-zinc-900 dark:text-white font-medium">Email Alerts</span>
@@ -133,7 +133,7 @@ export default function SettingsPage({ currency, setCurrency, notifications, set
                             </button>
                         </div>
 
-                        {/* Push Toggle */}
+                        {}
                         <div className="flex items-center justify-between">
                             <div className="flex flex-col">
                                 <span className="text-zinc-900 dark:text-white font-medium">Push Notifications</span>

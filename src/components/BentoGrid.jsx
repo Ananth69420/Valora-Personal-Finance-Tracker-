@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 
-// Animation Variants
+
 const containerVariants = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.1 // Delay between each card showing up
+            staggerChildren: 0.1 
         }
     }
 };
@@ -36,8 +36,8 @@ export const BentoGrid = ({ className, children }) => {
 export const BentoCard = ({ className, title, icon: Icon, description, header, children }) => {
     return (
         <motion.div
-            variants={itemVariants} // Use item variant
-            whileHover={{ y: -5, scale: 1.01 }} // Added scale for pop
+            variants={itemVariants} 
+            whileHover={{ y: -5, scale: 1.01 }} 
             className={cn(
                 "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-sm p-4 justify-between flex flex-col space-y-4",
                 "bg-white border border-zinc-200",
